@@ -9,40 +9,99 @@
 </head>
 <body>
 
-    <header>
-        <h1>My Student Dashboard</h1>
-        <p>Organize your studies, manage your tasks, and reach your goals.</p>
+    <header class="header">
+        <div>
+            <h1>Student Dashboard</h1>
+            <p>Your personal space to organize, focus, and succeed.</p>
+        </div>
+        <div class="header-icon">🎓</div>
     </header>
 
-    <main>
+    <main class="container">
+
         <section class="welcome">
-            <h2>Welcome, Student! 👋</h2>
-            <p>Let's make today productive.</p>
+            <h2>Welcome back! 👋</h2>
+            <p>Every small step brings you closer to your goals.</p>
         </section>
 
         <section class="stats">
             <div class="stat-card">
+                <span class="stat-icon">📚</span>
                 <h3 id="totalTasks">0</h3>
                 <p>Total Tasks</p>
             </div>
+
             <div class="stat-card">
+                <span class="stat-icon">✅</span>
                 <h3 id="completedTasks">0</h3>
                 <p>Completed Tasks</p>
             </div>
+
+            <div class="stat-card">
+                <span class="stat-icon">⏳</span>
+                <h3 id="remainingTasks">0</h3>
+                <p>Remaining Tasks</p>
+            </div>
+        </section>
+
+        <section class="progress-section">
+            <div class="progress-heading">
+                <h2>My Progress</h2>
+                <span id="progressPercent">0%</span>
+            </div>
+            <div class="progress-bar">
+                <div id="progressFill"></div>
+            </div>
+            <p>Keep going! You're doing great.</p>
         </section>
 
         <section class="tasks">
             <h2>My Tasks 📚</h2>
+            <p class="section-description">Plan your academic work and stay organized.</p>
 
             <div class="task-form">
-                <input type="text" id="taskInput"
-                    placeholder="Enter a new task">
-                <button id="addTask">Add Task</button>
+                <input
+                    type="text"
+                    id="taskInput"
+                    placeholder="What do you need to do?"
+                >
+
+                <select id="subjectInput">
+                    <option value="Math">Math</option>
+                    <option value="CS310">CS310</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Software Engineering">Software Engineering</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <input type="date" id="dateInput">
+
+                <select id="priorityInput">
+                    <option value="Low">Low Priority</option>
+                    <option value="Medium" selected>Medium Priority</option>
+                    <option value="High">High Priority</option>
+                </select>
+
+                <button id="addTask">+ Add Task</button>
+            </div>
+
+            <div class="filter-section">
+                <label for="filterTasks">Filter tasks:</label>
+                <select id="filterTasks">
+                    <option value="all">All Tasks</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
             </div>
 
             <ul id="taskList"></ul>
         </section>
+
     </main>
+
+    <footer>
+        <p>Student Productivity Dashboard | Built by a Computer Science Student</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
